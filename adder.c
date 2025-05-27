@@ -8,7 +8,9 @@ int addBook() {
         printf("DB가 가득 찼습니다.\n");
         return 0;
     }
-    Book nb = { .bookID = nextID++ };
+    Book nb;
+    nb.bookID = nextID++;
+    
     char buffer[128];
 
     printf("책 이름: ");

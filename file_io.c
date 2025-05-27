@@ -55,6 +55,14 @@ int loadBooks(const char *filename) {
 
         bookCount++;
     }
+    int maxID = 0;
+    for (int i = 0; i < bookCount; ++i) {
+        if (bookDB[i].bookID > maxID) {
+            maxID = bookDB[i].bookID;
+        }
+    }
+    nextID = maxID + 1;   // 다음에 할당할 ID
+
     fclose(fp);
     return 0;
 }

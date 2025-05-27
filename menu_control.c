@@ -35,7 +35,7 @@ void runMenuLoop(const char *filename) {
                            b->bookID, b->title, b->author,
                            b->publisher, b->year, b->genre);
                 }
-                printf("수정/삭제할 ID (취소: 0)> ");
+                printf("\n수정/삭제할 ID (취소: 0)> ");
                 int id; scanf("%d%*c", &id);
                 if (id > 0) {
                     int idx = -1;
