@@ -36,16 +36,18 @@ void runMenuLoop(const char *filename) {
                            b->publisher, b->year, b->genre);
                 }
                 printf("\n수정/삭제할 ID (취소: 0)> ");
-                int id; scanf("%d%*c", &id);
+                int id; 
+                scanf("%d%*c", &id);
                 if (id > 0) {
                     int idx = -1;
                     for (int i = 0; i < bookCount; ++i)
                         if (bookDB[i].bookID == id) { idx = i; break; }
                     if (idx >= 0) {
                         printf("1. 수정 2. 삭제 3. 취소 > ");
-                        int m; scanf("%d%*c", &m);
-                        if (m == 1) editBook(&bookDB[idx]);
-                        else if (m == 2) deleteBook(idx);
+                        int m; 
+                        scanf("%d%*c", &m);
+                        if (m == 1) {editBook(&bookDB[idx]);}
+                        else if (m == 2) {deleteBook(idx);}
                     } else {
                         printf("해당 ID가 존재하지 않습니다.\n");
                     }
